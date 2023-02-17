@@ -1,5 +1,7 @@
 print("""**************************
-Mobile Bank App              
+Mobile Bank App 
+
+Press 'q' to exit the app.
 **************************""")
 
 import datetime
@@ -9,6 +11,9 @@ print(current_date)
 
 while True:
   card = input("Please enter your card number:")
+  if(card=="q"):
+    print("Goodbye!")
+    break
   if (card != "5899 6588 3354 2265") and (card !="4566 4487 5894 5588"):
     print("This card number isn't valid. Please try again.")
     continue
@@ -33,27 +38,27 @@ while True:
         exit
       elif (withdrawmoney <= accountbalance):
         print("Your transaction has been confirmed. You can draw your money on closest ATM machine by reading a QR Code .")
-      q = input("Do you wanna make another process?  If your answer is yes please dial 1. If your answer is no please dial 2.")
-      if (q == "1"):
-        print("You are being redirected to the home page...")
+        q = input("Do you wanna make another process?  If your answer is yes please dial 1. If your answer is no please dial 2.")
+        if (q == "1"):
+          print("You are being redirected to the home page...")
+          exit
+        elif (q == "2"):
+          print("Thank you for using our app. See you later!")
+          break
+    elif (process == "3"):
+      transfer = input("Please write the card number you wanna transfer money:")
+      if (transfer != "4566 4487 5894 5588"):
+        print("This card number isn't valid. Please try again.")
         exit
-      elif (q == "2"):
-        print("Thank you for using our app. See you later!")
-        break
-      elif (process == "3"):
-        transfer = input("Please write the card number you wanna transfer money:")
-        if (transfer != "4566 4487 5894 5588"):
-          print("This card number isn't valid. Please try again.")
-          exit(61)
-        elif(transfer=="4566 4487 5894 5588"):
-          print("Your transaction has been confirmed. You can draw your money on closest ATM machine by reading a QR Code .")
-          q = input("Do you wanna make another process?  If your answer is yes please dial 1. If your answer is no please dial 2.")
-          if (q == "1"):
-            ("You are being redirected to the home page...")
-            exit
-          elif (q == "2"):
-            ("Thank you for using our app. See you later!")
-            break 
+      elif(transfer == "4566 4487 5894 5588"):
+        print("The amount has been transferred to the other account.")
+        q = input("Do you wanna make another process?  If your answer is yes please dial 1. If your answer is no please dial 2.")
+        if (q == "1"):
+          print("You are being redirected to the home page...")
+          exit
+        elif (q == "2"):
+          print("Thank you for using our app. See you later!")
+          break 
   elif (card == "4566 4487 5894 5588"):
     print("Visa BankAmericard")
     if (process == "1"):
@@ -72,16 +77,23 @@ while True:
        exit
       elif (withdrawmoney <= accountbalance1):
        print("Your transaction has been confirmed. You can draw your money on closest ATM machine by reading a QR Code .")
+      q = input("Do you wanna make another process?  If your answer is yes please dial 1. If your answer is no please dial 2.")
+      if (q == "1"):
+          print("You are being redirected to the home page...")
+          exit(17)
+      elif (q == "2"):
+          print("Thank you for using our app. See you later!")
+          break 
     elif (process == "3"):
         transfer = input("Please write the card number you wanna transfer money:")
         if (transfer != "5899 6588 3354 2265"):
           print("This card number isn't valid. Please try again.")
-          exit(76)
+          exit(83)
         elif(transfer=="5899 6588 3354 2265"):
           amount =int(input("Please write the amount:"))
           if (amount > accountbalance1):
-           print(("Your account balance is isn't enough for do this process."))
-           exit
+           print("Your account balance is isn't enough for do this process.")
+           exit(83)
           elif (amount <= accountbalance1):
               print("The amount has been transferred to the other account.")
           q = input("Do you wanna make another process?  If your answer is yes please dial 1. If your answer is no please dial 2.")
