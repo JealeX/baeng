@@ -46,7 +46,7 @@ while True:
           print("This card number isn't valid. Please try again.")
           exit(61)
         elif(transfer=="4566 4487 5894 5588"):
-          print("İşlem gerçekleştirildi. Para başarıyla karşı tarafa aktarıldı.")
+          print("Your transaction has been confirmed. You can draw your money on closest ATM machine by reading a QR Code .")
           q = input("Do you wanna make another process?  If your answer is yes please dial 1. If your answer is no please dial 2.")
           if (q == "1"):
             ("You are being redirected to the home page...")
@@ -66,7 +66,7 @@ while True:
         print("Thank you for using our app. See you later!")
         break
     elif (process == "2"):
-      withdrawmoney = int(input("Çekmek istediğiniz tutarı giriniz:"))
+      withdrawmoney = int(input("Enter the amount:"))
       if (withdrawmoney > accountbalance1):
        print("Your account balance is isn't enough for do this process.")
        exit
@@ -75,10 +75,15 @@ while True:
     elif (process == "3"):
         transfer = input("Please write the card number you wanna transfer money:")
         if (transfer != "5899 6588 3354 2265"):
-          print("Hatalı numara girdiniz. Lütfen tekrar tuşlayınız.")
-          exit(57)
+          print("This card number isn't valid. Please try again.")
+          exit(76)
         elif(transfer=="5899 6588 3354 2265"):
-          print("İşlem gerçekleştirildi. Para başarıyla karşı tarafa aktarıldı.")
+          amount =int(input("Please write the amount:"))
+          if (amount > accountbalance1):
+           print(("Your account balance is isn't enough for do this process."))
+           exit
+          elif (amount <= accountbalance1):
+              print("The amount has been transferred to the other account.")
           q = input("Do you wanna make another process?  If your answer is yes please dial 1. If your answer is no please dial 2.")
           if (q == "1"):
             ("You are being redirected to the home page...")
